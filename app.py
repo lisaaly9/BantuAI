@@ -64,6 +64,7 @@ data_df = pd.DataFrame()
 
 if sheet:
     raw_data = sheet.get_all_values()
+    st.write(f"debug: berhasil koneksi, jumlah baris: {len(raw_data)}")
     if len(raw_data) > 1:
         data_df = pd.DataFrame(raw_data[1:], columns=raw_data[0])
         data_df.columns = data_df.columns.str.strip()
