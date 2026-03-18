@@ -11,7 +11,7 @@ import plotly.express as px
 st.set_page_config(page_title="Bantu.AI - Logistik Pintar", layout="wide")
 
 # Konfigurasi API Gemini
-API_KEY = "AIzaSyCPcIw2STmbQWN6mafPgbxAAqL761fmpu8"
+API_KEY = st.secrets["gemini_api_key"]
 genai.configure(api_key=API_KEY)
 
 available_models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
